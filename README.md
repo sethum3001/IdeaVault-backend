@@ -22,7 +22,7 @@ This is the backend component of the IdeaVault project. It provides RESTful APIs
 - Mongoose 
 
 ## Authentication and Authorization
-Implemented authentication and authorization using JWT (JSON Web Tokens) and Joi packages.
+Authentication and authorization implemented using JWT (JSON Web Tokens) and Joi packages.
 
 ## Deployment
 Deployed using Cyclic
