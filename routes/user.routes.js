@@ -9,7 +9,7 @@ const bcrypt = require("bcrypt");
 router.post("/login", async (req, res) => {
   try {
     const { name, password } = req.body;
-    const user = await User.findOne({ name });
+    const user = await User.findOne({ name : name.toLowerCase() });
     if (!user) return res.status(400).json({ message: "User not found" });
 
     //Checking the password with bcrypt compare method
@@ -30,8 +30,13 @@ router.post("/login", async (req, res) => {
 
     res.status(200).json({accessToken, refreshToken, message: "Login successful"});
     } catch (err) {
-        console.log(err);
+      if (err.isJoi) {
+        // Extract and format Joi validation error messages
+        const errorMessages = err.details.map(detail => detail.message);
+        return res.status(400).json({ message: "Validation error", errors: errorMessages });
+      }else {
         res.status(500).json({ message: "Internal server error" });
+      }
     }
 });
 
@@ -60,7 +65,13 @@ router.post("/register", async (req, res) => {
       );
       res.status(200).json({accessToken, refreshToken, message: "User created"});
   } catch (err) {
-    res.status(400).send(err);
+    if (err.isJoi) {
+      // Extract and format Joi validation error messages
+      const errorMessages = err.details.map(detail => detail.message);
+      return res.status(400).json({ message: "Validation error", errors: errorMessages });
+    }else{
+      res.status(500).json({ message: "Internal server error" });
+    }
   }
 });
 
