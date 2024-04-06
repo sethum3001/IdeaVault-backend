@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require("../models/UserModel");
 const {registerSchema} = require("../middleware/joi_auth");
 const { signAccessToken, signRefreshToken, verifyAccessToken } = require("../middleware/jwt_authentication");
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcrypt");
 
 //User login
 router.post("/login", async (req, res) => {
