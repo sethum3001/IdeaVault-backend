@@ -28,6 +28,10 @@ app.listen(PORT, () => {
   console.log(`Server is up and running on port ${PORT}`);
 });
 
+app.use("/", (req, res) => {
+  res.status(200).send({"ideaVAult-version":"v1", "status":"healthy" });
+});
+
 app.use("/user", userRouter);
 
 app.use("/notes", noteRouter);
