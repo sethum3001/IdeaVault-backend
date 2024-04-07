@@ -12,7 +12,11 @@ This is the backend component of the IdeaVault project. It provides RESTful APIs
 
 if you navigate to the endopoint you and you see thea `JSON` response like this it means the server is running successfully
 ```json
+<<<<<<< HEAD
 { "IdeaVault-version": "v1", "status":"healthy" }
+=======
+{ "ideaVault-version": "v1", "status":"healthy" }
+>>>>>>> ac4da6cf2d931a10d665e7706d2ba412ee0bdff7
 ```
 
 ## Folder Structure
