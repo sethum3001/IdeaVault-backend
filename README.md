@@ -10,7 +10,7 @@ This is the backend component of the IdeaVault project. It provides RESTful APIs
 4. **Environment Variables**: Create a `.env` file in the root of the backend directory according to the specified environment variables in .env.example file.
 5. **Start Backend Development Server**: Run `npm run dev` to start the backend server.
 
-if you navigate to the endopoint you and you see thea `JSON` response like this it means the server is running successfully
+if you navigate to the endopoint and you see the `JSON` response like this it means the server is running successfully
 ```json
 <<<<<<< HEAD
 { "IdeaVault-version": "v1", "status":"healthy" }
