@@ -28,10 +28,6 @@ app.listen(PORT, () => {
   console.log(`Server is up and running on port ${PORT}`);
 });
 
-app.use("/", (req, res) => {
-  res.status(200).send({"IdeaVault-version":"v1", "status":"healthy" });
-});
-
 app.use("/user", userRouter);
 
 app.use("/notes", noteRouter);
@@ -39,5 +35,9 @@ app.use("/notes", noteRouter);
 app.use("/labels", labelRouter);
 
 app.use("/auth", authRouter)
+
+app.use("/", (req, res) => {
+  res.status(200).send({"IdeaVault-version":"v1", "status":"healthy" });
+});
 
 module.exports = app;
