@@ -10,13 +10,9 @@ This is the backend component of the IdeaVault project. It provides RESTful APIs
 4. **Environment Variables**: Create a `.env` file in the root of the backend directory according to the specified environment variables in .env.example file.
 5. **Start Backend Development Server**: Run `npm run dev` to start the backend server.
 
-if you navigate to the endopoint and you see the `JSON` response like this it means the server is running successfully
+if you navigate to the endpoint and you see the `JSON` response like this it means the server is running successfully
 ```json
-<<<<<<< HEAD
-{ "IdeaVault-version": "v1", "status":"healthy" }
-=======
-{ "ideaVault-version": "v1", "status":"healthy" }
->>>>>>> ac4da6cf2d931a10d665e7706d2ba412ee0bdff7
+{ "IdeaVault-version": "v1", "status": "healthy" }
 ```
 
 ## Folder Structure
@@ -31,7 +27,7 @@ if you navigate to the endopoint and you see the `JSON` response like this it me
 - Mongoose 
 
 ## Authentication and Authorization
-Authentication and authorization implemented using JWT (JSON Web Tokens) and Joi packages.
+Authentication and authorization were implemented using JWT (JSON Web Tokens) and Joi packages.
 
 ## Deployment
 Deployed using Cyclic - https://lazy-pear-calf-coat.cyclic.app
